@@ -14,21 +14,21 @@ import com.services.StudentService;
 public class FirstResource {
 	StudentService ss = new StudentService();
 	
-	@Path("/resource1")
+	@Path("resource1")
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
 	public String getMessage1() {
 		return "1 , Hello, REST!";
 	}
 	
-	@Path("/resource2")
+	@Path("resource2")
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
 	public String getMessage2() {
 		return "2 , Hello, REST!";
 	}
 	
-	@Path("/resource3")
+	@Path("resource3")
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
 	public String getMessage3() {
