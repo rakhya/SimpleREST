@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -39,8 +40,16 @@ public class FirstResource {
 	@GET
 	@Produces({MediaType.APPLICATION_XML})
 	public List<Student> getStudents(){
-		ss.addStudent(1, "rakhya", 10);
-		ss.addStudent(2, "harika", 10);
+		ss.addStudent();
 		return ss.getStudents();
-	} 
+	}
+	
+	@Path("students/{studentid}")
+	@GET
+	@Produces({MediaType.APPLICATION_JSON})
+	public Student getStudent(@PathParam("studentid") int id){
+		ss.addStudent();
+		return ss.getStudent(id);
+	}
+	
 }
